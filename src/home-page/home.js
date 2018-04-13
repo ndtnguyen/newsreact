@@ -14,11 +14,11 @@ const styles = {
 
 }
 const list = [
-  { price: 41, kr: 1495 },
-  { price: 12, kr:439 },
-  { price: 22, kr: 799 },
-  { price: 82, kr: 2585 },
-  { price: 123, kr: 3720 }
+  { price: 41, kr: 1495, isBest: true },
+  { price: 12, kr:439, isBest: false },
+  { price: 22, kr: 799, isBest: false },
+  { price: 82, kr: 2585, isBest: false },
+  { price: 123, kr: 3720, isBest: false }
 ]
 class Home extends React.Component {
 
@@ -46,7 +46,7 @@ class Home extends React.Component {
             <div key={index} className="col-lg-4 col-md-4">             
               <div className="card card-item">
                 <div className="card-body card-content">
-                <Label value="Best value" fontStype="uppercase"/>
+                {x.isBest ? <Label value="Best value" fontStype="uppercase"/> : null }
                   <p className="priceBox"><span className="price">{x.price}</span><span className="currency-type">st</span></p>
                   {index === 0 ? <span className="normal-text">+ boken Nätterna på <span className="text-danger">Mon Chéri</span></span> : <span>&nbsp;</span>}
                   <hr className="dashed-line" />
