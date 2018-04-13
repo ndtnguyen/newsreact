@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import './home.css';
+import Label from '../components/Label/label';
 
 const styles = {
   root: {
@@ -13,11 +14,11 @@ const styles = {
 
 }
 const list = [
-  { price: 41 },
-  { price: 12 },
-  { price: 22 },
-  { price: 82 },
-  { price: 123 }
+  { price: 41, kr: 1495 },
+  { price: 12, kr:439 },
+  { price: 22, kr: 799 },
+  { price: 82, kr: 2585 },
+  { price: 123, kr: 3720 }
 ]
 class Home extends React.Component {
 
@@ -42,11 +43,15 @@ class Home extends React.Component {
         <div className="box-content">
           <div className="row">
           {list.map((x,index) => (
-            <div key={index} className="col-lg-4 col-md-4">
+            <div key={index} className="col-lg-4 col-md-4">             
               <div className="card card-item">
                 <div className="card-body card-content">
-                  <p className="priceBox"><span className="price">{x.price}</span><span className="currency-type">nr</span></p>
-                  <span>+ boken Nätterna på <span className="text-danger">Mon Chéri</span></span>
+                <Label value="Best value" fontStype="uppercase"/>
+                  <p className="priceBox"><span className="price">{x.price}</span><span className="currency-type">st</span></p>
+                  {index === 0 ? <span className="normal-text">+ boken Nätterna på <span className="text-danger">Mon Chéri</span></span> : <span>&nbsp;</span>}
+                  <hr className="dashed-line" />
+                  <div className="uom">{x.kr} kr</div>
+                  <div><button className="price-box-button">Beställ</button></div>
                 </div>
               </div>
             </div>
