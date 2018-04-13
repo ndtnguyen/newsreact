@@ -1,0 +1,8 @@
+.logo {
+    text-align: center;
+}
+.login, .user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

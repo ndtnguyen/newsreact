@@ -24,7 +24,8 @@ const styles = {
     },
     group: {
         display: "inline"
-    }
+    },
+  
 }
 class Login extends React.Component { 
     constructor() {
@@ -47,7 +48,8 @@ class Login extends React.Component {
                 </div>
                 <div>
                     <TextField id="pw" placeholder="Password" className={classes.textField} value={this.state.name} margin="normal" type="password"/>
-                </div>  
+                </div>
+                <button className={classes.loginBtn}>LOG IN</button>  
                 <Button variant="raised" className={classes.button}>
                     LOG IN
                 </Button>     

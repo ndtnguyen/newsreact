@@ -1,0 +1,27 @@
+.card.card-item {
+    width:100%;
+    padding-top:100%;
+    position: relative;
+    margin-top: 30px;
+    background-color: #F8F8F8;
+    border: none;
+}
+.card-content {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: #555555;
+}
+.price {
+    font-weight: bolder;
+    font-size: 75pt;    
+}
+.priceBox {
+    padding: 0px;
+}
+.currency-type {
+    font-size: 46pt;
+}
