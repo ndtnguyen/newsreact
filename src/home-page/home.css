@@ -5,6 +5,7 @@
     margin-top: 30px;
     background-color: #F8F8F8;
     border: none;
+    border: 2px solid transparent;
 }
 .card.card-item:hover {
     background-color: #FFFFFF;
@@ -53,6 +54,13 @@
     font-size: 18pt;
     padding-bottom: 4%  
 }
+.price-col {
+
+}
+/* .responsive-img {
+    width: 100%;
+    height: auto;
+} */
 @media screen and (max-width:960px) {
     .price {
         font-weight: 900;
@@ -66,11 +74,12 @@
         font-size: 0.7em;
     }
     .price-box-button {
-        width: 55%;
-        padding: 4% 0 4% 0;
+        width: 40%;
+        padding: 2% 0 2% 0;
         border: 2px solid black;
         text-transform: uppercase;
         background:none;
+        font-size: 0.8rem;
     }
     .uom {
         font-size: 1em;

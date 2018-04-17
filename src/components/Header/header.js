@@ -40,7 +40,7 @@ class Header extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid header">
         <div className="row">
           <div className="col-md-2 login">
             <Button className={classes.login} onClick={this.toggleDrawer(true)} color="inherit">Sign In/Register</Button>

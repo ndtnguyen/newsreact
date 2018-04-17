@@ -6,3 +6,6 @@
     align-items: center;
     justify-content: center;
 }
+.header {
+    padding-top: 2rem;
+}

@@ -26,7 +26,8 @@ class Home extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.home}>  
-        <div className="description">
+        <div className="row">
+          {/* <img class="responsive-img" src='/assets/body-text.png' alt="body text"/> */}
           <p>
             I Sveriges största nyhetsmagasin läser du varje vecka berättelserna, fördjupningarna, analyserna och nyheterna om det viktigaste just nu inom kultur, vetenskap, politik, ekonomi och livsstil. 
           </p>
@@ -43,10 +44,10 @@ class Home extends React.Component {
         <div className="box-content">
           <div className="row">
           {list.map((x,index) => (
-            <div key={index} className="col-lg-4 col-md-4">             
+            <div key={index} className="col-lg-4 col-md-4 price-col">             
               <div className="card card-item">
                 <div className="card-body card-content">
-                {x.isBest ? <Label value="Best value" fontStype="uppercase"/> : null }
+                  {x.isBest ? <Label value="Best value" fontStype="uppercase"/> : null }
                   <p className="priceBox"><span className="price">{x.price}</span><span className="currency-type">st</span></p>
                   {index === 0 ? <span className="normal-text">+ boken Nätterna på <span className="text-danger">Mon Chéri</span></span> : <span>&nbsp;</span>}
                   <hr className="dashed-line" />
