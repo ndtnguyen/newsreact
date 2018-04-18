@@ -1,74 +1,73 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
-import Radio, { RadioGroup } from 'material-ui/Radio';
-import { FormControl, FormControlLabel } from 'material-ui/Form';
-import TextField from 'material-ui/TextField';
-import Button from 'material-ui/Button';
 import Register from '../register/register';
+import './login.css';
 
-const styles = {
-    login : {
-        textAlign: "center",
-        paddingBottom: "20px"
-    },
-    textField : {
-        width: "400px"
-    },
-    FormControl: {
-        textAlign: "center"
-    },
-    button : {
-        width: "150px",
-        marginTop: "20px",
-        marginBottom: "20px"
-    },
-    group: {
-        display: "inline"
-    }
-}
-class Login extends React.Component { 
+class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-            value: "login",
+            type: "login",
+            email: "",
+            password: "",
+            isSubmitted: false
         }
     }
 
     handleChange = event => {
-        this.setState({ value: event.target.value });
+        this.setState({ type: event.target.type });
     };
 
+    validate = () => {
+        console.log('validate');
+    }
     renderLogin = () => {
-        const { classes } = this.props;
+        let invalidEmail = !this.state.email && this.state.isSubmitted;
+        let invalidPassword = !this.state.password && this.state.isSubmitted;
         return (
             <div>
                 <div>
-                    <TextField id="email" placeholder="Email Address" className={classes.textField} value={this.state.name} margin="normal"/>
+                    <input className={invalidEmail? " myinput invalid" : "myinput"} type="email  " placeholder="Email Address" onChange={(e) => this.setState({ email: e.target.value })} />
+                </div>
+                <div className="text-left">
+                    {invalidEmail ? <span className="error-msg">Email is invalid</span> : null}
                 </div>
                 <div>
-                    <TextField id="pw" placeholder="Password" className={classes.textField} value={this.state.name} margin="normal" type="password"/>
-                </div>  
-                <Button variant="raised" className={classes.button}>
-                    LOG IN
-                </Button>     
-            </div>  
+                    <input className={invalidPassword? "myinput invalid" : "myinput"} type="password" placeholder="Password" onChange={(e) => this.setState({ password: e.target.value })} />
+                </div>
+                <div className="text-left">
+                    {!this.state.password && this.state.isSubmitted ? <span className="error-msg">Password is invalid</span> : null}
+                </div>
+                <div>
+                    <button className="login-button" type="button" onClick={() => this.setState({ isSubmitted: true })}>LOG IN</button>
+                </div>
+            </div>
         );
     }
     render() {
-        const { classes } = this.props;
         return (
-        <div className={classes.login}>        
-                <h3>{this.state.value === "login" ? <span>Have An Account Already?</span> : <span>Get the Best of Fokus</span>}</h3>
-                <div className={classes.formControl}>
-                <RadioGroup aria-label="loginType" name="loginType" className={classes.group} value={this.state.value} onChange={this.handleChange}>
-                    <FormControlLabel value="login" control={<Radio />} label="Log in" />
-                    <FormControlLabel value="register" control={<Radio />} label="Register new account" />
-                </RadioGroup>
+            <div className="login">
+                <div className="inline-block">
+                    <div className="title">
+                        {this.state.type === "login" ? "Have An Account Already?" : "Get the Best of Fokus"}
+                    </div>
+                    <br />
+                    <div>
+                        <div className="align-left">
+                            <input type="radio" name="login" value="option1" />
+                            <label htmlFor="radio1">
+                                Login
+                                </label>
+                        </div>
+                        <div className="align-right">
+                            <input type="radio" name="login" />
+                            Register new account
+                    </div>
+                    </div>
+                    {this.state.type === "login" ? this.renderLogin() : <Register />}
                 </div>
-                {this.state.value === "login" ? this.renderLogin() : <Register/>}     
-        </div>
+            </div>
         );
     }
 }
 
-export default withStyles(styles)(Login);
+export default Login;

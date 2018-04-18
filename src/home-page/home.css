@@ -1,0 +1,92 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    
+}
+.card.card-item {
+    width:100%;
+    padding-top:100%;
+    position: relative;
+    margin-top: 30px;
+    background-color: #F8F8F8;
+    border: none;
+    border-radius: 0px;
+    border: 2px solid transparent;
+}
+.app.dark .card.card-item {
+    background-color: #29282B;
+}
+.card.card-item:hover {
+    background-color: #FFFFFF;
+    border: 2px solid black;
+}
+.card-body.card-content {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: #555555;
+    padding: 0.8rem;
+}
+.price {
+    font-weight: 900;
+    font-size: 5.6em; 
+}
+.priceBox {
+    padding: 0px;
+    margin: 0px;
+}
+.currency-type {
+    font-size: 46pt;
+}
+.price-box-button {
+    width: 55%;
+    padding: 4% 0 4% 0;
+    border: 2px solid black;
+    text-transform: uppercase;
+    background:none;
+}
+.price-box-button:hover {
+    background: #1D1C20;
+    color: #FFFFFF;
+}
+.dashed-line {
+    border: 0.05em dashed #C0C0C0;
+    width: 50%;
+    margin-bottom: 7%;
+    margin-top: 4%;
+}
+.uom {
+    font-size: 18pt;
+    padding-bottom: 4%  
+}
+/* .responsive-img {
+    width: 100%;
+    height: auto;
+} */
+@media screen and (max-width:960px) {
+    .price {
+        font-weight: 900;
+        font-size: 3em; 
+        font-family: "Open Sans";   
+    }
+    .currency-type {
+        font-size: 2em;
+    }
+    .normal-text {
+        font-size: 0.7em;
+    }
+    .price-box-button {
+        width: 40%;
+        padding: 2% 0 2% 0;
+        border: 2px solid black;
+        text-transform: uppercase;
+        background:none;
+        font-size: 0.8rem;
+    }
+    .uom {
+        font-size: 1em;
+    }
+}
