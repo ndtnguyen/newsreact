@@ -1,18 +1,8 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
 import './home.css';
 import Label from '../components/Label/label';
 
-const styles = {
-  root: {
-    background: "#516235",
-    height: "100%"
-  },
-  home : {
-    paddingTop: "20px"
-  },
 
-}
 const list = [
   { price: 41, kr: 1495, isBest: true },
   { price: 12, kr:439, isBest: false },
@@ -23,10 +13,9 @@ const list = [
 class Home extends React.Component {
 
   render() {
-    const { classes } = this.props;
     return (
-      <div className={classes.home}>  
-        <div className="row">
+      <div className="home">  
+        <div>
           {/* <img class="responsive-img" src='/assets/body-text.png' alt="body text"/> */}
           <p>
             I Sveriges största nyhetsmagasin läser du varje vecka berättelserna, fördjupningarna, analyserna och nyheterna om det viktigaste just nu inom kultur, vetenskap, politik, ekonomi och livsstil. 
@@ -65,4 +54,4 @@ class Home extends React.Component {
   }
 }
 
-export default withStyles(styles)(Home);
+export default Home;

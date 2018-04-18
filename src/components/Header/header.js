@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../../login/login';
-import { Button, Drawer } from 'material-ui';
+import { Drawer } from 'material-ui';
 import { withStyles } from 'material-ui/styles';
 import './header.css';
 
@@ -13,7 +13,7 @@ const styles = {
   },
   login : {
     color: "#F50057",
-    fontWeight: "bold"
+    textTransform: "uppercase"
   },
   textCenter: {
     width: "100%",
@@ -38,18 +38,18 @@ class Header extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, brightTheme } = this.props;
     return (
-      <div className="container-fluid header">
+      <div className="header">
         <div className="row">
-          <div className="col-md-2 login">
-            <Button className={classes.login} onClick={this.toggleDrawer(true)} color="inherit">Sign In/Register</Button>
+          <div className="col-md-2 login-link">
+            <span className={classes.login} onClick={this.toggleDrawer(true)}>Sign In/Register</span>
           </div>
           <div className="col-lg-8 col-md-8 logo">
-          <img src="assets/logo.png" alt="logo"/>
+          <img src={brightTheme? "assets/logo.png" : "assets/logo-dark.png"} alt="logo"/>
           </div>
           <div className="col-md-2 user">
-          <div className={classes.userInfo}>Hi, Samson</div>
+          <div className={classes.userInfo}>Hi, <strong>Samson</strong></div>
           </div>
           <Drawer anchor="top" open={this.state.isOpen} onClose={this.toggleDrawer(false)}>            
             <Login/>

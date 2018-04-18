@@ -1,3 +1,8 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    
+}
 .card.card-item {
     width:100%;
     padding-top:100%;
@@ -5,7 +10,11 @@
     margin-top: 30px;
     background-color: #F8F8F8;
     border: none;
+    border-radius: 0px;
     border: 2px solid transparent;
+}
+.app.dark .card.card-item {
+    background-color: #29282B;
 }
 .card.card-item:hover {
     background-color: #FFFFFF;
@@ -24,7 +33,6 @@
 .price {
     font-weight: 900;
     font-size: 5.6em; 
-    font-family: "Open Sans";   
 }
 .priceBox {
     padding: 0px;
@@ -53,9 +61,6 @@
 .uom {
     font-size: 18pt;
     padding-bottom: 4%  
-}
-.price-col {
-
 }
 /* .responsive-img {
     width: 100%;
